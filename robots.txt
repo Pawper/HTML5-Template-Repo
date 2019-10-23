@@ -1,0 +1,18 @@
+# https://support.google.com/webmasters/answer/6062608
+# robots.txt cannot be in a subdirectory, must be at the root
+# The site can only have 1 robots.txt file
+# Groups are processed from top-to-bottom
+
+# Group 1 - currently set to allow everything and disallow nothing
+# To Disallow instead, move the / to Disallow
+# Directories must end with /
+# Supports the * wildcard for a path prefix, suffix, or entire string.
+# Case-sensitive
+User-agent: *
+Allow: /
+Disallow:
+
+# You can link multiple sitemaps
+# URLs must have the protocol included (http://) so you must include both
+Sitemap: https://example.com/sitemap.xml
+Sitemap: http://www.example.com/sitemap.xml
