@@ -13,6 +13,12 @@
 
 body {
   overflow-x: hidden; /* prevents unwanted horizontal scroll */
+  font-family: Verdana, Tahoma, sans-serif; /* use https://www.cssfontstack.com/ to figure out good system fonts to use */
+  font-size: 16px; /* sets top level em font size because it can be different across browsers */
+}
+
+.centeredHorizontally {
+  margin: auto; /* centers horizontally */
 }
 
 /* Load media queries at the bottom in ascending order */
