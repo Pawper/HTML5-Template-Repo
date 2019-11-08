@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- lang attribute helps search engines return language specific results, and it is also used by screen readers that switch language profiles to provide the correct accent and pronunciation. -->
+<!-- lang attribute helps search engines return language specific results, and it is also used by screen readers that switch language profiles to provide the correct accent and pronunciation. Also used for hyphenation via CSS -->
 <html lang="en">
   <!-- SEO cheat sheet https://learn-the-web.algonquindesign.ca/topics/seo-cheat-sheet/ -->
   <!-- HTML Validator https://validator.w3.org/#validate_by_input -->
@@ -46,7 +46,7 @@
     <!-- Links -->
       <!-- CSS - Emmet puts styles/style.css by default -->
         <link rel="stylesheet" type="text/css" href="styles/style.css">
-      <!-- Link webfonts as well the same way https://fonts.google.com/ -->
+      <!-- Better to import Google fonts in CSS -->
       <!-- Favicon - 260x260 PNG/JPG/SVG then use https://realfavicongenerator.net/ -->
     
     <!-- FontAwesome https://fontawesome.com/ -->
@@ -63,6 +63,7 @@
 
        https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images -->
   <!-- Emmet is faster https://docs.emmet.io/cheat-sheet/ -->
+  <!-- If you need selectors for CSS, for best performance use classes not IDs or combinators -->
   <!-- Use semantic HTML & use labels(for="id"), ids, values, fieldsets & legends for forms -->
   <!-- Use the title attribute on links and alt attribute on pictures -->
   <!-- Don't include URLs inline, keep link text short & explicit (no "click here") -->
