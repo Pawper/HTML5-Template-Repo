@@ -2,8 +2,17 @@
 /* Web design should be mobile first */
 /* Classes perform better than IDs */
 /* Later rules override earlier rules */
+/* Remember positioning context & z-index stacking context are things that exist - based on position: property */
 
 
+* {
+  margin: 0; /* CSS reset */
+  padding: 0; /* CSS reset */
+  box-sizing: border-box; /* width & height values will include border and padding */
+}
+
+body {
+  overflow-x: hidden; /* prevents unwanted horizontal scroll */
+}
 
 /* Load media queries at the bottom in ascending order */
-
