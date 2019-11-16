@@ -1,74 +1,107 @@
 <!DOCTYPE html>
 <!-- lang attribute helps search engines return language specific results, and it is also used by screen readers that switch language profiles to provide the correct accent and pronunciation. Also used for hyphenation via CSS -->
 <html lang="en">
-  <!-- SEO cheat sheet https://learn-the-web.algonquindesign.ca/topics/seo-cheat-sheet/ -->
-  <!-- HTML Validator https://validator.w3.org/#validate_by_input -->
-  <head>
-    <!-- For compatibility -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <!-- Every html page must have a title! Use · as a separater. -->
-      <title>Site/Company Name · Small keyword rich, catchy phrase · City, Country</title>
-    <!-- For other pages: -->
-      <title>Page Title · Site/Company Name</title>
-
-    <!-- SEO description must be on every page; author is optional -->
-      <meta name="description" content="A short sentence describing the purpose and content of this individual page.">
-      <meta name="author" content="Your Name">
-
-    <!-- Robots meta tags https://developers.google.com/search/reference/robots_meta_tag -->
-    <!-- Remove if you want the site to be crawled -->
-      <meta name="robots" content="NOINDEX, NOFOLLOW">
-
-    <!-- Open Graph http://ogp.me/ -->
-      <meta property="og:type" content="website">
-      <meta property="og:locale" content="en_CA">
-      <meta property="og:title" content="Title of this page, same as title tag">
-      <meta property="og:url" content="http://fullurl.com/to-this/page/">
-      <meta property="og:image" content="http://fullurl.com/to-this/image.jpg">
-      <meta property="og:site_name" content="Name of your website">
-      <meta property="og:description" content="Description of this page, same as meta description">
-    <!-- Twitter Cards https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary -->
-      <meta name="twitter:card" content="summary">
-      <meta name="twitter:site" content="@yourtwitterhandle">
-      <meta name="twitter:title" content="Title of this page, same as title tag">
-      <meta name="twitter:url" content="http://fullurl.com/to-this/page/">
-      <meta name="twitter:description" content="Description of this page, same as meta description">
-      <meta name="twitter:image" content="http://fullurl.com/to-this/image.jpg">
-    <!-- Geotagging & location data https://en.wikipedia.org/wiki/ICBM_address#Modern_use https://en.wikipedia.org/wiki/Geotagging#HTML_pages-->
-      <meta name="ICBM" content="45.416667,-75.7">
-      <meta name="geo.position" content="45.416667;-75.7">
-      <meta name="geo.region" content="ca-on">
-      <meta name="geo.placename" content="Ottawa">
-
-    <!-- Links -->
-      <!-- CSS - Emmet puts styles/style.css by default -->
-        <link rel="stylesheet" type="text/css" href="styles/style.css">
-      <!-- Better to import Google fonts in CSS -->
-      <!-- Favicon - 260x260 PNG/JPG/SVG then use https://realfavicongenerator.net/ -->
-    
-    <!-- FontAwesome https://fontawesome.com/ -->
-
-    <!-- A-Frame - remove if not applicable -->
-      <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
-  </head>
-  <body>
+<!-- SEO cheat sheet https://learn-the-web.algonquindesign.ca/topics/seo-cheat-sheet/ -->
+<!-- HTML Validator https://validator.w3.org/#validate_by_input -->
+<head>
+  <!-- For compatibility -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- Every html page must have a title! Use · as a separater. -->
+  <title>Site Name · Small keyword rich, catchy phrase · City, Country</title>
+  <!-- For other pages: -->
+  <title>Page Title · Site Name</title>
+  
+  <!-- SEO description must be on every page; author is optional -->
+  <meta name="description" content="A short sentence describing the purpose and content of this individual page.">
+  <meta name="author" content="Your Name">
+  
+  <!-- Robots meta tags https://developers.google.com/search/reference/robots_meta_tag -->
+  <!-- Remove if you want the site to be crawled -->
+  <meta name="robots" content="NOINDEX, NOFOLLOW">
+  
+  <!-- Open Graph http://ogp.me/ -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_CA">
+  <meta property="og:title" content="Title of this page, same as title tag">
+  <meta property="og:url" content="http://fullurl.com/to-this/page/">
+  <meta property="og:image" content="http://fullurl.com/to-this/image.jpg">
+  <meta property="og:site_name" content="Name of your website">
+  <meta property="og:description" content="Description of this page, same as meta description">
+  <!-- Twitter Cards https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@yourtwitterhandle">
+  <meta name="twitter:title" content="Title of this page, same as title tag">
+  <meta name="twitter:url" content="http://fullurl.com/to-this/page/">
+  <meta name="twitter:description" content="Description of this page, same as meta description">
+  <meta name="twitter:image" content="http://fullurl.com/to-this/image.jpg">
+  <!-- Geotagging & location data https://en.wikipedia.org/wiki/ICBM_address#Modern_use https://en.wikipedia.org/wiki/Geotagging#HTML_pages-->
+  <meta name="ICBM" content="45.416667,-75.7">
+  <meta name="geo.position" content="45.416667;-75.7">
+  <meta name="geo.region" content="ca-on">
+  <meta name="geo.placename" content="Ottawa">
+  
+  <!-- Links -->
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="styles/style.css">
+  <!-- Better to import Google fonts in CSS -->
+  <!-- Favicon - 260x260 PNG/JPG/SVG then use https://realfavicongenerator.net/ -->
+  
+  <!-- FontAwesome https://fontawesome.com/ -->
+  
+</head>
+<body>
   <!-- Use data-nosnippet attribute for text parts not to be used as a snippet. NOT VALID: not a span, div, or section -->
   <!-- Use rel="nofollow" when search engines should ignore the link for rankings -->
   <!-- Follow http://schema.org/ for metadata attributes on elements -->
   <!-- Responsive images 
-       https://www.freecodecamp.org/news/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433/ 
-
-       https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images -->
+    https://www.freecodecamp.org/news/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433/ 
+    
+    https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images -->
   <!-- Emmet is faster https://docs.emmet.io/cheat-sheet/ -->
-  <!-- If you need selectors for CSS, for best performance use classes not IDs or combinators -->
+  <!-- Use classes not IDs -->
   <!-- Use semantic HTML & use labels(for="id"), ids, values, fieldsets & legends for forms -->
   <!-- Only use h1 for the main title -->
   <!-- Use the title attribute on links and alt attribute on pictures -->
   <!-- Don't include URLs inline, keep link text short & explicit (no "click here") -->
-
+  <div class="centeredVertically">
+    <div class="content centeredHorizontally">
+      <div class="boxStyle">
+        <div class="flexContainer">
+          <header class="siteNameBlock">
+            <h1>Site Name</h1>
+            <span class="subheading">Small keyword rich, catchy phrase</span>
+          </header>
+          <nav>
+            <ul>
+              <li><a href="#" class="button page1Button">Page 1</a></li>
+              <li><a href="#" class="button page2Button">Page 2</a></li>
+              <li><a href="#" class="button page3Button">Page 3</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <main id="page1" class="boxStyle page">
+        <h2>Page 1 Content</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia velit ea maiores natus praesentium deleniti ad ab nihil est. Alias!</p>
+      </main>
+      <main id="page2" class="boxStyle page closed">
+        <h2>Page 2 Content</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores eaque, alias placeat modi blanditiis ipsa, doloribus minima itaque distinctio ipsam totam reprehenderit nam neque? Non pariatur delectus dicta hic! Repellendus dolore in est eum magnam vel non id dolor facere.</p>
+      </main>
+      <main id="page3" class="boxStyle page closed">
+        <h2>Page 3 Content</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit reprehenderit explicabo temporibus! At nihil incidunt, autem laboriosam fugit neque molestiae eaque voluptatum quae quibusdam a. Accusamus, sit id suscipit expedita quibusdam perferendis ipsam quod. Alias, atque tenetur repudiandae optio corrupti velit facilis vitae rerum labore nulla similique voluptates eum excepturi eos earum delectus impedit veritatis magnam esse, accusantium, commodi beatae.</p>
+      </main>
+      <footer>
+        Footer
+      </footer>
+    </div>
+  </div>
+  
   <!-- Put scripts down here so HTML render isn't stopped to load JS -->
-  </body>
+  <script src="scripts/main.js"></script>
+</body>
 </html>

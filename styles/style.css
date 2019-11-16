@@ -1,24 +1,159 @@
 /* Import sitewide fonts in main CSS file */
+@import url('https://fonts.googleapis.com/css?family=Tomorrow&display=swap');
+@font-face {
+  font-family: 'Enge Etienne';
+  src: url('../OPTIEngeEtienne.otf');
+} 
+
 /* Web design should be mobile first */
-/* Classes perform better than IDs */
-/* Later rules override earlier rules */
+/*  */
 /* Remember positioning context & z-index stacking context are things that exist - based on position: property */
+/* Use rem instead of em - em is not accessible for browser text sizing options */
+/* Cascade & specificity only matter for conflicting properties, not the entire rule. If any rule's property is not conflicted with, it will be in effect. */
+/* Selector specificity - https://specifishity.com/
+    X-Y-Z (consider as X>Y>Z)
+    X: ids - best avoid IDs due to specificity/performance
+    Y: classes/attributes/pseudo-classes
+    Z: elements/pseudo-elements
+    A single X overrides any number of Y; a single Y overrides any number of Z.
+    More Z overrides less Z, more Y overrides less Y, more X overrides less X.
+    :is() and :not() don't count aside from their contents; neither do combinator symbols or *.
+    Use [id=""] if you want Y instead of X specificity for an ID. */
+/* https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Pseudo-classes_and_pseudo-elements#Reference_section */
+/* Cascade
+    With equal importance, specificity is used.
+    With equal specificity, source order is used (later overrides earlier).
+    https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade#Cascading_order */
+/* Put new CSS selectors/properties/valudes after the fallback */
 
+/* Box sizing: take the border box as the area defined by any size you set*/
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 
+/* CSS Reset */
 * {
-  margin: 0; /* CSS reset */
-  padding: 0; /* CSS reset */
-  box-sizing: border-box; /* width & height values will include border and padding */
+  margin: 0;
+  padding: 0;
 }
 
 body {
+  height: 100vh;
+  width: 100vw;
   overflow-x: hidden; /* prevents unwanted horizontal scroll */
-  font-family: Verdana, Tahoma, sans-serif; /* use https://www.cssfontstack.com/ to figure out good system fonts to use */
+  font-family: Tomorrow, sans-serif; /* use https://www.cssfontstack.com/ to figure out good system fonts to use */
   font-size: 16px; /* sets top level em font size because it can be different across browsers */
+  background: url('https://source.unsplash.com/featured/?ruin,ocean') no-repeat center center/cover;
+  /* background-image background-repeat background-position/background-size */
+  background-attachment: fixed;
+}
+
+.centeredVertically {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content {
+  width: 700px;
+  max-width: 90vw; /* keeps things relatively responsive*/
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
 }
 
 .centeredHorizontally {
   margin: auto; /* centers horizontally */
+}
+
+.boxStyle {
+  color: white;
+  text-shadow:
+      2px 2px 3px rgba(0, 0, 50, 0.5),
+    -1px -1px 0 rgba(0, 0, 50, 0.5),  
+     1px -1px 0 rgba(0, 0, 50, 0.5),
+     -1px 1px 0 rgba(0, 0, 50, 0.5),
+      1px 1px 0 rgba(0, 0, 50, 0.5);
+  background: linear-gradient(rgba(0, 0, 0, 1),rgba(0, 0, 100, 0.5));
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  border: 2px #fff outset;
+  border-radius: 5px;
+  padding: 20px;
+  /* Margins don't collapse because container is display: flex */
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.flexContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.siteNameBlock {
+  margin-right: 20px;
+}
+
+h1 {
+  font-family: 'Enge Etienne';
+  font-size: 3rem;
+  line-height: 1;
+  font-weight: 100;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+nav ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.button {
+  display: block;
+  white-space: nowrap;
+  cursor: pointer;
+  border: 1px #fff outset;
+  border-radius: 3px;
+  padding: 5px 20px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.75);
+  background-color: inherit;
+  box-shadow: 3px 3px 3px 0px rgba(0,0,50,0.5);
+  text-shadow: none;
+}
+
+nav > ul > li:hover .button, .button:hover, .button:focus {
+  color: rgba(255, 255, 255, 1);
+  background: linear-gradient(rgba(255, 255, 255, 0.25),rgba(255, 255, 255, 0));
+  border: 1px solid white;
+  box-shadow: 5px 5px 10px 0px rgba(0,0,50,0.5);
+  transform: translate(-2px, -2px);
+}
+
+footer {
+  background: linear-gradient(rgba(0, 0, 0, 0.25),rgba(0, 0, 0, 0.5));
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  color: #fff;
+  border: none;
+  font-size: 0.75rem;
+  text-shadow: 1px 1px black, -1px -1px black;
+  text-align: center;
+  padding: 5px 20px;
+  margin-top: 10px;
+}
+
+.closed {
+  display: none;
 }
 
 /* Load media queries at the bottom in ascending order */
